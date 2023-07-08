@@ -1,0 +1,59 @@
+{
+  "name": "fronend-responsive",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": ".",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "https:start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem react-scripts start",
+    "build:prod": "npm run generate-meta-tag && react-app-rewired build && mv build build-prod",
+    "build:uat": "npm run generate-meta-tag && dotenv -e .env.uat react-app-rewired build && rm -rf build-uat && mv build build-uat",
+    "generate-meta-tag": "node ./node_modules/react-cache-buster/dist/generate-meta-tag.js",
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.js"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off",
+          "array-callback-return": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.3.0",
+    "history": "4.10.1",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.1",
+    "react-app-rewired": "^2.1.8",
+    "react-dom": "^17.0.1",
+    "react-redux": "^8.1.1",
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.1",
+    "redux-form-cc": "^2.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-modux": "^2.2.4",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.25.2",
+    "react-error-overlay": "6.0.9",
+    "react-styleguidist": "^11.1.6"
+  }
+}
