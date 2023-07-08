@@ -5,11 +5,7 @@
   "homepage": ".",
   "scripts": {
     "start": "react-app-rewired start",
-    "https:start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem react-scripts start",
-    "build": "react-app-rewired build",
-    "build:uat": "npm run generate-meta-tag && dotenv -e .env.uat react-app-rewired build && rm -rf build-uat && mv build build-uat",
-    "generate-meta-tag": "node ./node_modules/react-cache-buster/dist/generate-meta-tag.js",
-    "test": "react-app-rewired test"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app",
