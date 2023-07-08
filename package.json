@@ -5,7 +5,7 @@
   "homepage": ".",
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-scripts build"
+    "build": "react-scripts --openssl-legacy-provider build"
   },
   "eslintConfig": {
     "extends": "react-app",
